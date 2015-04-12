@@ -1,10 +1,42 @@
+
 var createTodoList = function() {
-  var todoList = {};
+  var taskList = []
+  var todoList = {}
+  var task = function(item){
+  	return {
+  		description: item,
+  		completed: false
+  	}
+  }
 
-  // your code here
+  todoList.add = function(item){
+  	taskList.push(task(item))
+  }
 
-  return todoList;
-};
+  todoList.list = function(){
+  	console.log(taskList)
+  }
+
+  todoList.indexOf = function(item){
+  	for(var i = 0; i < taskList.length; i++){
+  		if (taskList[i].description === item) console.log(i)
+  	}
+  }
+
+  todoList.remove = function(index){
+  	taskList.splice(index, 1)
+  }
+
+  todoList.get = function(index){
+  	console.log(taskList[index])
+  }
+
+  todoList.complete = function(index){
+  	taskList[index].completed = true
+  }
+
+  return todoList
+}
 
 
 
