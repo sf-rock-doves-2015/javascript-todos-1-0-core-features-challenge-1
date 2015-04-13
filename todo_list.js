@@ -22,12 +22,10 @@ var createTodoList = function() {
           return i
         }
       };
-
     },
 
     remove: function(index){
       this.currentItems.splice(index, 1);
-
     },
 
     get: function(index){
@@ -64,7 +62,7 @@ var groceryList = createTodoList();
 groceryList.add('bread');
 groceryList.add('cheese');
 groceryList.add('milk');
-groceryList.list(); //-> [
+// groceryList.list(); //-> [
 // {description: 'bread', completed: false},
 // {description: 'cheese', completed: false},
 // {description: 'milk', completed: false},
@@ -77,8 +75,8 @@ groceryList.complete(1);
 // // {description: 'cheese', completed: true},
 // // {description: 'milk', completed: false},
 // // ];
-// groceryList.remove(1);
-// groceryList.list(); //-> [
+groceryList.remove(1);
+groceryList.list(); //-> [
 // {description: 'bread', completed: false},
 // {description: 'milk', completed: false},
 // ];
