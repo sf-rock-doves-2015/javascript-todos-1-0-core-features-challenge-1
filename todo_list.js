@@ -1,36 +1,34 @@
 var createTodoList = function() {
   var todoList = {
-   currentItems: [],
-    add: function(items){
-      this.currentItems.push(items)
+
+    currentItems: [],
+
+    add: function(item){
+      var groceryObject = { description: item, completed: false };
+      this.currentItems.push(groceryObject);
     },
 
     list: function(){
       var length = this.currentItems.length
       for (i = 0; i < length; i++){
-        console.log(this.currentItems[i])
+        console.log(this.currentItems[i]);
       };
     },
 
     indexOf: function(item){
-        console.log(this.currentItems.indexOf(item))
+        console.log(this.currentItems.indexOf(item));
     },
 
     remove: function(index){
-      this.currentItems.splice(index, 1)
+      this.currentItems.splice(index, 1);
 
-    }
+    },
 
   }; // todoList end
-  console.log(todoList)
+  console.log(this.currentItems)
+
   return todoList;
 };
-
-
-
-
-
-
 
 
 // Driver code
@@ -38,25 +36,25 @@ var createTodoList = function() {
 
 // Release 1
 
-var groceryList = createTodoList();
-groceryList.add('bread');
-groceryList.add('cheese');
-groceryList.add('milk');
-groceryList.list(); //-> ['bread', 'cheese', 'milk']
-groceryList.indexOf('cheese'); //-> 1
-groceryList.remove(1);
-groceryList.list(); //-> ['bread', 'milk']
-
-// // release 2
 // var groceryList = createTodoList();
 // groceryList.add('bread');
 // groceryList.add('cheese');
 // groceryList.add('milk');
+// groceryList.list(); //-> ['bread', 'cheese', 'milk']
+// groceryList.indexOf('cheese'); //-> 1
+// groceryList.remove(1);
+// groceryList.list(); //-> ['bread', 'milk']
+
+// // // release 2
+var groceryList = createTodoList();
+groceryList.add('bread');
+groceryList.add('cheese');
+groceryList.add('milk');
 // groceryList.list(); //-> [
-// // {description: 'bread', completed: false},
-// // {description: 'cheese', completed: false},
-// // {description: 'milk', completed: false},
-// // ];
+// {description: 'bread', completed: false},
+// {description: 'cheese', completed: false},
+// {description: 'milk', completed: false},
+// ];
 // groceryList.indexOf('cheese'); //-> 1
 // groceryList.get(1); //-> {description: 'cheese', completed: false}
 // groceryList.complete(1);
