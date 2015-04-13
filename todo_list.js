@@ -26,6 +26,10 @@ var createTodoList = function() {
       this.tasks.splice(idx, 1)
   };
 
+  todoList.indexOf = function(item) {
+    this.tasks.indexOf(item);
+  };
+
   return todoList;
 };
 
