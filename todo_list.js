@@ -16,6 +16,11 @@ var createTodoList = function() {
         console.log(this.currentItems.indexOf(item))
     },
 
+    remove: function(index){
+      this.currentItems.splice(index, 1)
+
+    }
+
   }; // todoList end
   console.log(todoList)
   return todoList;
@@ -39,8 +44,8 @@ groceryList.add('cheese');
 groceryList.add('milk');
 groceryList.list(); //-> ['bread', 'cheese', 'milk']
 groceryList.indexOf('cheese'); //-> 1
-// groceryList.remove(1);
-// groceryList.list(); //-> ['bread', 'milk']
+groceryList.remove(1);
+groceryList.list(); //-> ['bread', 'milk']
 
 // // release 2
 // var groceryList = createTodoList();
