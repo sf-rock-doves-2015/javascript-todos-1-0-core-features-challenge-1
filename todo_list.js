@@ -1,14 +1,73 @@
+// var createTodoList = function() {
+//   var todoList = {};
+//   var todoItems = [];
+
+//   todoList.add = function(item) {
+//     todoItems.push(item);
+//   };
+
+//   todoList.tasks= todoItems;
+
+//   todoList.list = function(){
+//     for (var i = 0; i < todoItems.length; i++)
+//       console.log(todoItems[i])
+//     };
+
+//   todoList.indexOf = function(item){
+//     for (var i = 0; i < todoItems.length; i++)
+//       if (todoItems[i] == item){
+//         return i};
+//   };
+
+//   todoList.remove = function(item){
+//      todoItems.splice(index, 1)
+//   };
+//   return todoList;
+// };
+
+
 var createTodoList = function() {
   var todoList = {};
+  var todoItems = [];
 
-  // your code here
+  todoList.add = function(item) {
+    todoItems.push({description: item, completed: false})
+  };
+
+
+  todoList.tasks= todoItems;
+
+  todoList.list = function(){
+    for (var i = 0; i < todoItems.length; i++){
+      console.log(todoItems[i]);
+      };
+    };
+
+
+  todoList.indexOf = function(task){
+    for (var i = 0; i < todoItems.length; i++){
+      if (todoItems[i].descritpion === task){
+        return i
+      };
+    };
+  };
+
+  todoList.remove = function(index){
+     todoList.remove = function(item){
+      todoItems.splice(index, 1)
+    };
+  };
+
+  todoList.get = function(index){
+    return todoItems[index];
+  };
+
+  todoList.complete = function(index){
+    todoItems[index].completed = true;
+  };
 
   return todoList;
 };
-
-
-
-
 
 
 // Driver code
@@ -31,20 +90,20 @@ groceryList.add('bread');
 groceryList.add('cheese');
 groceryList.add('milk');
 groceryList.list(); //-> [
-// {description: 'bread', completed: false}, 
-// {description: 'cheese', completed: false}, 
-// {description: 'milk', completed: false}, 
+// {description: 'bread', completed: false},
+// {description: 'cheese', completed: false},
+// {description: 'milk', completed: false},
 // ];
 groceryList.indexOf('cheese'); //-> 1
 groceryList.get(1); //-> {description: 'cheese', completed: false}
 groceryList.complete(1);
 groceryList.list(); //-> [
-// {description: 'bread', completed: false}, 
-// {description: 'cheese', completed: true}, 
-// {description: 'milk', completed: false}, 
+// {description: 'bread', completed: false},
+// {description: 'cheese', completed: true},
+// {description: 'milk', completed: false},
 // ];
 groceryList.remove(1);
 groceryList.list(); //-> [
-// {description: 'bread', completed: false}, 
-// {description: 'milk', completed: false}, 
+// {description: 'bread', completed: false},
+// {description: 'milk', completed: false},
 // ];
