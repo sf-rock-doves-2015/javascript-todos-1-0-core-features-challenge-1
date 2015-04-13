@@ -1,10 +1,27 @@
 var createTodoList = function() {
-  var todoList = {};
+  var todoList = {
+   currentItems: [],
+    add: function(items){
+      this.currentItems.push(items)
+    },
 
-  // your code here
+    list: function(){
+      var length = this.currentItems.length
+      for (i = 0; i < length; i++){
+        console.log(this.currentItems[i])
+      };
+    },
 
+    indexOf: function(item){
+        console.log(this.currentItems.indexOf(item))
+    },
+
+  }; // todoList end
+  console.log(todoList)
   return todoList;
 };
+
+
 
 
 
@@ -22,29 +39,29 @@ groceryList.add('cheese');
 groceryList.add('milk');
 groceryList.list(); //-> ['bread', 'cheese', 'milk']
 groceryList.indexOf('cheese'); //-> 1
-groceryList.remove(1);
-groceryList.list(); //-> ['bread', 'milk']
+// groceryList.remove(1);
+// groceryList.list(); //-> ['bread', 'milk']
 
-// release 2
-var groceryList = createTodoList();
-groceryList.add('bread');
-groceryList.add('cheese');
-groceryList.add('milk');
-groceryList.list(); //-> [
-// {description: 'bread', completed: false}, 
-// {description: 'cheese', completed: false}, 
-// {description: 'milk', completed: false}, 
-// ];
-groceryList.indexOf('cheese'); //-> 1
-groceryList.get(1); //-> {description: 'cheese', completed: false}
-groceryList.complete(1);
-groceryList.list(); //-> [
-// {description: 'bread', completed: false}, 
-// {description: 'cheese', completed: true}, 
-// {description: 'milk', completed: false}, 
-// ];
-groceryList.remove(1);
-groceryList.list(); //-> [
-// {description: 'bread', completed: false}, 
-// {description: 'milk', completed: false}, 
+// // release 2
+// var groceryList = createTodoList();
+// groceryList.add('bread');
+// groceryList.add('cheese');
+// groceryList.add('milk');
+// groceryList.list(); //-> [
+// // {description: 'bread', completed: false},
+// // {description: 'cheese', completed: false},
+// // {description: 'milk', completed: false},
+// // ];
+// groceryList.indexOf('cheese'); //-> 1
+// groceryList.get(1); //-> {description: 'cheese', completed: false}
+// groceryList.complete(1);
+// groceryList.list(); //-> [
+// // {description: 'bread', completed: false},
+// // {description: 'cheese', completed: true},
+// // {description: 'milk', completed: false},
+// // ];
+// groceryList.remove(1);
+// groceryList.list(); //-> [
+// {description: 'bread', completed: false},
+// {description: 'milk', completed: false},
 // ];
