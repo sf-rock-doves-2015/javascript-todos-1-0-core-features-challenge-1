@@ -22,31 +22,37 @@
 
 // RELEASE 2 SOLUTION
 var createTodoList = function() {
-  var todoList = {
-    items: [],
-    add: function(item){
-      this.items.push({description: item, completed: false});
-    },
-    list: function(){
-      return this.items;
-    },
-    indexOf: function(item){
-      items = this.items
-      for(var i = 0; i < this.items.length; i++){
-        if(items[i]["description"] === item) {
-          return i;
-        }
+  var todoList = {};
+
+  todoList.items = [];
+
+  todoList.add = function(item){
+    this.items.push({description: item, completed: false});
+  };
+
+  todoList.list = function(){
+    return this.items;
+  };
+
+  todoList.indexOf = function(item){
+    items = this.items
+    for(var i = 0; i < this.items.length; i++){
+      if(items[i]["description"] === item) {
+        return i;
       }
-    },
-    get: function(index){
-      return this.items[index];
-    },
-    complete: function(index){
-      this.items[index].completed = true
-    },
-    remove: function(index){
-      this.items.splice(index,1);
     }
+  };
+
+  todoList.get = function(index){
+    return this.items[index];
+  };
+
+  todoList.complete = function(index){
+    this.items[index].completed = true
+  };
+
+  todoList.remove = function(index){
+    this.items.splice(index,1);
   };
   return todoList;
 };
