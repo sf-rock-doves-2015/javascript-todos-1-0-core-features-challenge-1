@@ -16,7 +16,13 @@ var createTodoList = function() {
     },
 
     indexOf: function(item){
-        console.log(this.currentItems.indexOf(item));
+      var length = this.currentItems.length
+        // console.log(this.currentItems.indexOf(itemSought.description.item));
+      for (i = 0; i < length; i++){
+        if (this.currentItems[i].description == item)
+          return i
+      };
+
     },
 
     remove: function(index){
@@ -25,7 +31,7 @@ var createTodoList = function() {
     },
 
   }; // todoList end
-  console.log(this.currentItems)
+  // console.log(this.currentItems)
 
   return todoList;
 };
@@ -50,12 +56,12 @@ var groceryList = createTodoList();
 groceryList.add('bread');
 groceryList.add('cheese');
 groceryList.add('milk');
-// groceryList.list(); //-> [
+groceryList.list(); //-> [
 // {description: 'bread', completed: false},
 // {description: 'cheese', completed: false},
 // {description: 'milk', completed: false},
 // ];
-// groceryList.indexOf('cheese'); //-> 1
+groceryList.indexOf('cheese'); //-> 1
 // groceryList.get(1); //-> {description: 'cheese', completed: false}
 // groceryList.complete(1);
 // groceryList.list(); //-> [
