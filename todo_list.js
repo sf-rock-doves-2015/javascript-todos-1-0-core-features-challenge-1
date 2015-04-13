@@ -17,10 +17,10 @@ var createTodoList = function() {
 
     indexOf: function(item){
       var length = this.currentItems.length
-        // console.log(this.currentItems.indexOf(itemSought.description.item));
       for (i = 0; i < length; i++){
-        if (this.currentItems[i].description == item)
+        if (this.currentItems[i].description === item){
           return i
+        }
       };
 
     },
@@ -29,6 +29,14 @@ var createTodoList = function() {
       this.currentItems.splice(index, 1);
 
     },
+
+    get: function(index){
+      return this.currentItems[index]
+    },
+
+    complete: function(index){
+      this.currentItems[index].completed = true;
+    }
 
   }; // todoList end
   // console.log(this.currentItems)
@@ -62,8 +70,8 @@ groceryList.list(); //-> [
 // {description: 'milk', completed: false},
 // ];
 groceryList.indexOf('cheese'); //-> 1
-// groceryList.get(1); //-> {description: 'cheese', completed: false}
-// groceryList.complete(1);
+groceryList.get(1); //-> {description: 'cheese', completed: false}
+groceryList.complete(1);
 // groceryList.list(); //-> [
 // // {description: 'bread', completed: false},
 // // {description: 'cheese', completed: true},
