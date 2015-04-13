@@ -1,19 +1,27 @@
-//Psuedo code
+//Psuedo code release 1
 //Create a function(createTodoList) that builds a JS object with the follow properties and fcns:
 
 //Functions:
 //function to add a todo
 //function to list all todos
 //function to remove a todo
+
+//function: get: that returns a task object given an index.
+//function: complete: That marks a task as completed.
+
 //Properties:
-//an array called: tasks
+//An array called: tasks
+
+
 
 var createTodoList = function() {
   var todoList = {};
 
   todoList.tasks = [];
+
   todoList.add = function(item) {
-      this.tasks.push(item);
+      // this.tasks.push(item);
+      this.tasks.push({description: item, completed: false});
   };
 
   todoList.list = function() {
@@ -27,7 +35,24 @@ var createTodoList = function() {
   };
 
   todoList.indexOf = function(item) {
-    this.tasks.indexOf(item);
+    // for(var i=0; i<this.tasks.length; i++) {
+    //   var task = this.tasks[i];
+    //   if (task.description === item) { return i; }
+    // }
+    //another way:
+    for(var i=0; i<this.tasks.length; i++) {
+      if (this.tasks[i].description === item) { return i; }
+    }
+
+    return -1;
+  };
+
+  todoList.get = function(idx) {
+    console.log(this.tasks[idx]);
+  };
+
+  todoList.complete = function(idx) {
+    this.tasks[idx].completed = true;
   };
 
   return todoList;
