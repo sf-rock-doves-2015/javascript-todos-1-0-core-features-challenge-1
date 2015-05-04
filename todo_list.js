@@ -14,7 +14,7 @@ var createTodoList = function() {
 
     list: function(){
       for(var i = 0; i < this.tasks.length; i++){
-        console.log(this.tasks[i].name);
+        console.log(this.tasks[i].description);
       };
     },
 
